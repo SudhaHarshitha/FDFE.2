@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children, requiredRole }) => {
 const App = () => {
   return (
     <AppProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <div className="app-container">
           <Routes>
             <Route path="/" element={<LandingPage />} />
