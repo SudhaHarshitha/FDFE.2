@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { AppProvider, useAppContext } from './context/AppContext';
 import LandingPage from './components/LandingPage';
 import AuthPage from './components/AuthPage';
@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children, requiredRole }) => {
 const App = () => {
   return (
     <AppProvider>
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router>
         <div className="app-container">
           <Routes>
             <Route path="/" element={<LandingPage />} />
